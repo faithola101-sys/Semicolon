@@ -42,40 +42,56 @@ String[] callRegisterCallCostSettings = {"Call cost limit", "Show cost in"};
               System.out.println("    NOKIA PHONE MENU"); 
                
 
-              for (int i = 1; i <= menus.length; i++) {
-                System.out.println(i + " " + menus[i]);
+              for (int i = 0; i < menus.length; i++) {
+                System.out.println((i+1) + " " + menus[i]);
               }
 
 
              System.out.println("      CHOOSE FROM THE MENU ONLY");
              String pick = input.nextLine();
 
-            if (pick.equals("PHONE BOOK")) {
+            if (pick.equals("1")) {
                for (String item : phoneBookMenu) {
                System.out.println(item);}
                }
-           else if (pick.equals("MESSAGES")) {
+           else if (pick.equals("2")) {
                for (String item : messagesMenu) {
                System.out.println(item);}
                }
-           else if (pick.equals("CALL REGISTER")) {
+            else if (pick.equals("3")) {
+               System.out.println("CHAT");
+               }
+           else if (pick.equals("4")) {
                for (String item : callRegisterMenu) {
                System.out.println(item);}
                }
-            else if (pick.equals("TONES")) {
+            else if (pick.equals("5")) {
                for (String item : tonesMenu) {
                System.out.println(item);}
                }
-            else if (pick.equals("SETTINGS")) {
+            else if (pick.equals("6")) {
                for (String item : settingsMenu) {
                System.out.println(item);}
                }
-            else if (pick.equals("CLOCK")) {
+             else if (pick.equals("7")) {
+               System.out.println("CALL DIVERT");
+               }
+               else if (pick.equals("8")) {
+               System.out.println("GAMES");
+               }
+               else if (pick.equals("9")) {
+               System.out.println("CALCULATOR");
+               }
+               else if (pick.equals("10")) {
+               System.out.println("REMINDERS");
+               }
+
+               else if (pick.equals("11")) {
                for (String item : clockMenu) {
                System.out.println(item);}
                }
             else {
-               System.out.print("Invalid choice! Please pick from the list.");
+               System.out.print("invalid");
             }
 
 

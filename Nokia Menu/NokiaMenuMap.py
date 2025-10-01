@@ -1,76 +1,99 @@
+def nokia_menu():
+    print("           NOKIA 3310 PHONE MENU")
 
-# NokiaMenuMap.py
+    menus = ["PhoneBook", "Messages", "Chat", "Call register"]
+    phoneBook = ["Search", "Service Nos.", "Add name", "Erase", "Options"]
+    options = ["Type of view", "Memory status"]
+    messages = ["Write message", "Inbox", "Outbox", "Message settings"]
+    messageSettings = ["Set 1", "Common"]
+    messageSet1 = ["Message centre number", "Message sent as", "Message validity"]
+    messageCommon = ["Delivery reports", "Reply via same centre", "Character support"]
+    callRegister = ["Missed calls", "Received calls", "Dialled numbers", "Erase recent call lists", "Show call duration"]
+    callDuration = ["Last call duration", "All calls' duration", "Received calls' duration", "Dialled calls' duration", "Clear timers"]
 
-menus = ["PHONE BOOK", "MESSAGES", "CHAT", "CALL REGISTER", "TONES", "SETTINGS",
-         "CALL DIVERT", "GAMES", "CALCULATOR", "REMINDERS", "CLOCK", "PROFILES", "SIM SERVICES"]
+    # Show main menu
+    for i, menu in enumerate(menus, start=1):
+        print(f"{i} {menu}")
+    print("0 Exit")
 
-phoneBookMenu = ["Search", "Service Nos.", "Add name", "Erase",
-                 "Edit", "Assign tone", "Send b'card", "Speed dials", "Voice tags", "Options"]
-phoneBookOptions = ["Type of view", "Memory status"]
+    pick = int(input("Pick Menu (0-4): "))
 
-messagesMenu = ["Write messages", "Inbox", "Outbox", "Picture messages",
-                "Templates", "Smileys", "Message settings", "Info service",
-                "Voice mailbox number", "Service command editor"]
-messagesMessagesettings = ["Set", "Common"]
-messageMessagesettingsset = ["Message centre number", "Message sent as", "Message validity"]
-messageMessagesettingscommon = ["Delivery reports", "Reply via same centre", "Character support"]
+    if pick == 1:  # PhoneBook
+        for j, item in enumerate(phoneBook, start=1):
+            print(f"{j} {item}")
+        print("0 Back")
 
-callRegisterMenu = ["Missed calls", "Received calls", "Dialled numbers",
-                    "Erase recent call lists", "Show call duration", "Show call costs",
-                    "Call cost settings", "Prepaid credit"]
-callRegisterShowCallDuration = ["Last call duration", "All calls' duration",
-                                "Receive calls' duration", "Dialled calls' duration", "Clear timers"]
-callRegisterShowCallCosts = ["Last call cost", "All calls' cost", "Clear counters"]
-callRegisterCallCostSettings = ["Call cost limit", "Show cost in"]
+        choice = int(input("Choice (0-5): "))
 
-tonesMenu = ["Ringing tone", "Ringing volume", "Incoming call alert", "Composer",
-             "Message alert tone", "Warming and game tones", "Vibration alert", "Screen saver"]
+        if choice in range(1, 6):
+            print(phoneBook[choice-1])
 
-settingsMenu = ["Call settings", "Phone settings", "Security settings", "Restore factory settings"]
-settingsCallSettings = ["Automatic redial", "Speed dialling", "Call waiting options",
-                        "Own number sending", "Phone line in use", "Automatic answer"]
-settingsPhoneSettings = ["Language", "Cell info display", "Welcome note",
-                         "Network selection", "Lights", "Confirm SIM service actions"]
-settingsSecuritySettings = ["PIN code request", "Call barring service",
-                            "Fixed dialling", "Closed user group", "Phone security", "Change access codes"]
+            if choice == 5:  # Options
+                for k, opt in enumerate(options, start=1):
+                    print(f"{k} {opt}")
+                print("0 Back")
 
-clockMenu = ["Alarm clock", "Clock settings", "Date setting", "Stopwatch",
-             "Counterdown timer", "Auto update of date and time"]
+                click = int(input("Click (0-2): "))
+                if click in (1, 2):
+                    print(options[click-1])
+                elif click == 0:
+                    print("Back to PhoneBook Menu")
+        elif choice == 0:
+            print("Back to Main Menu")
 
-print("    NOKIA PHONE MENU")
+    elif pick == 2:  # Messages
+        for j, msg in enumerate(messages, start=1):
+            print(f"{j} {msg}")
+        print("0 Back")
 
-for i in range(len(menus)):
-    print(f"{i+1} {menus[i]}")
+        msgChoice = int(input("Choice (0-4): "))
 
-pick = input("      CHOOSE FROM THE MENU ONLY: ")
+        if msgChoice == 4:  # Message settings
+            for m, setting in enumerate(messageSettings, start=1):
+                print(f"{m} {setting}")
+            print("0 Back")
 
-if pick == "1":
-    for item in phoneBookMenu:
-        print(item)
-elif pick == "2":
-    for item in messagesMenu:
-        print(item)
-elif pick == "3":
-    print("CHAT")
-elif pick == "4":
-    for item in callRegisterMenu:
-        print(item)
-elif pick == "5":
-    for item in tonesMenu:
-        print(item)
-elif pick == "6":
-    for item in settingsMenu:
-        print(item)
-elif pick == "7":
-    print("CALL DIVERT")
-elif pick == "8":
-    print("GAMES")
-elif pick == "9":
-    print("CALCULATOR")
-elif pick == "10":
-    print("REMINDERS")
-elif pick == "11":
-    for item in clockMenu:
-        print(item)
-else:
-    print("invalid")
+            setChoice = int(input("Choice (0-2): "))
+            if setChoice == 1:
+                for s, item in enumerate(messageSet1, start=1):
+                    print(f"{s} {item}")
+            elif setChoice == 2:
+                for c, item in enumerate(messageCommon, start=1):
+                    print(f"{c} {item}")
+            elif setChoice == 0:
+                print("Back to Messages Menu")
+        elif msgChoice in (1, 2, 3):
+            print(messages[msgChoice-1])
+        elif msgChoice == 0:
+            print("Back to Main Menu")
+
+    elif pick == 3:  # Chat
+        print(menus[2])
+        print("0 Back")
+        input()
+
+    elif pick == 4:  # Call register
+        for j, call in enumerate(callRegister, start=1):
+            print(f"{j} {call}")
+        print("0 Back")
+
+        regChoice = int(input("Choice (0-5): "))
+
+        if regChoice in range(1, 5):
+            print(callRegister[regChoice-1])
+        elif regChoice == 5:  # Show call duration
+            for d, dur in enumerate(callDuration, start=1):
+                print(f"{d} {dur}")
+            print("0 Back")
+            input()
+        elif regChoice == 0:
+            print("Back to Main Menu")
+
+    elif pick == 0:
+        print("Exiting...")
+
+    else:
+        print("Invalid choice!")
+
+
+

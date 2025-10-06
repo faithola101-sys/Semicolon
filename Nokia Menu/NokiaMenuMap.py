@@ -12,15 +12,15 @@ def nokia_menu():
     callDuration = ["Last call duration", "All calls' duration", "Received calls' duration", "Dialled calls' duration", "Clear timers"]
 
     # Show main menu
-    for i, menu in enumerate(menus, start=1):
-        print(f"{i} {menu}")
+    for i in range(len(menus)):
+        print(f"{i+1} {menus[i]}")
     print("0 Exit")
 
     pick = int(input("Pick Menu (0-4): "))
 
     if pick == 1:  # PhoneBook
-        for j, item in enumerate(phoneBook, start=1):
-            print(f"{j} {item}")
+        for j in range(len(phoneBook)):
+            print(f"{j+1} {phoneBook[j]}")
         print("0 Back")
 
         choice = int(input("Choice (0-5): "))
@@ -29,8 +29,8 @@ def nokia_menu():
             print(phoneBook[choice-1])
 
             if choice == 5:  # Options
-                for k, opt in enumerate(options, start=1):
-                    print(f"{k} {opt}")
+                for k in range(len(options)):
+                    print(f"{k+1} {options[k]}")
                 print("0 Back")
 
                 click = int(input("Click (0-2): "))
@@ -42,24 +42,24 @@ def nokia_menu():
             print("Back to Main Menu")
 
     elif pick == 2:  # Messages
-        for j, msg in enumerate(messages, start=1):
-            print(f"{j} {msg}")
+        for j in range(len(messages)):
+            print(f"{j+1} {messages[j]}")
         print("0 Back")
 
         msgChoice = int(input("Choice (0-4): "))
 
         if msgChoice == 4:  # Message settings
-            for m, setting in enumerate(messageSettings, start=1):
-                print(f"{m} {setting}")
+            for m in range(len(messageSettings)):
+                print(f"{m+1} {messageSettings[m]}")
             print("0 Back")
 
             setChoice = int(input("Choice (0-2): "))
             if setChoice == 1:
-                for s, item in enumerate(messageSet1, start=1):
-                    print(f"{s} {item}")
+                for s in range(len(messageSet1)):
+                    print(f"{s+1} {messageSet1[s]}")
             elif setChoice == 2:
-                for c, item in enumerate(messageCommon, start=1):
-                    print(f"{c} {item}")
+                for c in range(len(messageCommon)):
+                    print(f"{c+1} {messageCommon[c]}")
             elif setChoice == 0:
                 print("Back to Messages Menu")
         elif msgChoice in (1, 2, 3):
@@ -73,8 +73,8 @@ def nokia_menu():
         input()
 
     elif pick == 4:  # Call register
-        for j, call in enumerate(callRegister, start=1):
-            print(f"{j} {call}")
+        for j in range(len(callRegister)):
+            print(f"{j+1} {callRegister[j]}")
         print("0 Back")
 
         regChoice = int(input("Choice (0-5): "))
@@ -82,8 +82,8 @@ def nokia_menu():
         if regChoice in range(1, 5):
             print(callRegister[regChoice-1])
         elif regChoice == 5:  # Show call duration
-            for d, dur in enumerate(callDuration, start=1):
-                print(f"{d} {dur}")
+            for d in range(len(callDuration)):
+                print(f"{d+1} {callDuration[d]}")
             print("0 Back")
             input()
         elif regChoice == 0:
@@ -94,6 +94,7 @@ def nokia_menu():
 
     else:
         print("Invalid choice!")
+
 
 
 

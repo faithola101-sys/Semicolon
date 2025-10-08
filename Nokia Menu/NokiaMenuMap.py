@@ -1,4 +1,4 @@
-def nokia_menu():
+
     print("           NOKIA 3310 PHONE MENU")
 
     menus = ["PhoneBook", "Messages", "Chat", "Call register"]
@@ -11,7 +11,7 @@ def nokia_menu():
     callRegister = ["Missed calls", "Received calls", "Dialled numbers", "Erase recent call lists", "Show call duration"]
     callDuration = ["Last call duration", "All calls' duration", "Received calls' duration", "Dialled calls' duration", "Clear timers"]
 
-    # Show main menu
+   
     for i in range(len(menus)):
         print(f"{i+1} {menus[i]}")
     print("0 Exit")
